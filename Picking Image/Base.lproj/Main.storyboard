@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Picking_Image" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,46 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GsJ-k7-3e9">
+                                <rect key="frame" x="162" y="155" width="276" height="290"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="276" id="aHh-1M-syO"/>
+                                    <constraint firstAttribute="height" constant="290" id="jJP-lF-Phk"/>
+                                </constraints>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eIW-Cv-xGs">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="1fC-VW-FDu"/>
+                                    <constraint firstAttribute="width" constant="600" id="C0L-8p-P7D"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Pick" id="Ysg-WD-bAa">
+                                        <connections>
+                                            <action selector="pickAnimage:" destination="BYZ-38-t0r" id="IE5-3Z-qkk"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GsJ-k7-3e9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="96e-12-zMJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eIW-Cv-xGs" secondAttribute="trailing" constant="-20" id="Ip8-7O-orG"/>
+                            <constraint firstItem="eIW-Cv-xGs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="T10-Yq-fD0"/>
+                            <constraint firstItem="GsJ-k7-3e9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="135" id="iDf-rl-Haw"/>
+                            <constraint firstItem="eIW-Cv-xGs" firstAttribute="top" secondItem="GsJ-k7-3e9" secondAttribute="bottom" constant="111" id="qDL-Ug-2aI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eIW-Cv-xGs" secondAttribute="bottom" id="xz2-aB-B7u"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imagePickerView" destination="GsJ-k7-3e9" id="mnC-HF-uda"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="37" y="298"/>
         </scene>
     </scenes>
 </document>
